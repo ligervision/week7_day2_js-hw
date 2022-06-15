@@ -26,39 +26,28 @@ console.log(toCelcius(temp))
     Create an instance of the new user and then change their password using the method.
 */
 
-// class User {
-//     constructor(username, password) {
-//       this.username = username;
-//       this.password = password;
-//     }
-//     // Getter
-//     get area() {
-//         return this.calcArea();
-//     }
-//     // Method
-//     calcArea() {
-//         return this.height * this.width;
-//     }
-// }
+class User{
+    constructor(username, password){
+        this.username = username
+        this.password = password
+    }
+    
+    changePassword(oldPassword, newPassword) {
+        if (oldPassword === this.password){
+            this.password = newPassword
+            console.log(`${this.username}'s password has been changed to ${newPassword}.`)
+        } else {
+            console.warn('Incorrect Password')
+        }
+    }
+}
 
-// const square = new Rectangle(10, 10);
+let user1 = new User('ligervision', '123');
+let user2 = new User('newuser', 'abc');
 
-// console.log(square.area); // 100
-
-
-//   const obj = {
-//     foo() {
-//       return 'bar';
-//     }
-//   };
-  
-//   console.log(obj.foo());
-//   // expected output: "bar"
-  
-
-
-
-
+user1.changePassword('123', '456')
+console.log(user1);
+console.log(user2);
 
 
 /*
